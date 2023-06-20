@@ -24,13 +24,13 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Pacient
 
 ## TECNOLOGIAS UTILIZADAS
 1. FrontEnd:
-   - 
+   >- adicionar
 2. BackEnd:
-   - 
+   >- adicionar
 3. Banco de Dados:
-   - 
+   >- adicionar
 4. Servidor:
-   - 
+   >- adicionar
 
 #
 Integrantes: [lucas gomes colombo](https://github.com/LucasgColombo), [Gilherme Fabrício](https://github.com/GuiDev115), [Rafael furtado](https://github.com/zSchwi)
