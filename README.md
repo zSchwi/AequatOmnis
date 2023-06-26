@@ -1,26 +1,35 @@
 # <p align="center">Aequat Omnis cinis</p>
 
-Aequat Omnis cinis é um sistema de genrenciamento de consultas médicas desenvolvido para um consultório em específico. o Sistema é feito pensando em otimizar e facilitar o agendamento e o gerenciamento de consultas, visando gerar menos conflitos de horários causados pelo sistema antigo e otimizar o tempo para os pacientes e para os médicos.<br>
-O sistema preve e implementa funcionalidades para 3 possiveis usuários: Paciente, Médico, Secretária.<br><br>
+Aequat Omnis cinis é um sistema de compra de chaves de jogos que podem ser utilizados em outras plataformas, permitindo que os clientes tenham acesso a uma gama de jogos a disposição em um único lugar, facilitando assim a busca e obtenção destes produtos de uma maneira prática e acessível.<br>
+O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuário, Cliente, Administrador.<br>
 
 ## Principais Funcionalidades:
-- Login
-- Agendamento de consulta
-    - Solicitar consulta
-    - Editar a consulta
-    - Cancelar a consulta
-    - Visualizar consulta 
-- Gerenciar Ficha Médica
-    - Criar 
-    - Atualizar 
-    - Excluir
-    - Visualizar
-- Gerenciar Horários
-    - Cadastrar
-    - Atualizar
-    - Excluir
-    - Visualizar
+- Login (Cliente/ADM) RF
+- Cadastro de Cliente RF
+- Gerenciamento de Produto RF
+   - Cadastrar
+   - Atualizar 
+   - Excluir 
+   - Visualizar
+- Gerenciar Vendas RF
+   - Cadastra
+   - Atualiza
+   - Visualiza
+   - Exclui
+- Carrinho RF
+   - Visualizar produtos adicionados
+   - Excluir produtos
+   - Alterar quantidade
 
+## Usuários e entidades do sistema:
+### Usuários:
+- Usuário(não logado/cadastrado)
+- Cliente
+- Administrador
+### Entidades:
+- Cliente
+- Produto
+- Venda
 
 ## TECNOLOGIAS UTILIZADAS:
 1. FrontEnd:
