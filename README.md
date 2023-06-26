@@ -31,7 +31,7 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
 - Produto
 - Venda
 
-## TECNOLOGIAS UTILIZADAS:
+## Tecnologias utilizadas:
 1. FrontEnd:
    >- adicionar
 2. BackEnd:
@@ -41,5 +41,4 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
 4. Servidor:
    >- adicionar
 
-#
 Integrantes: [lucas gomes colombo](https://github.com/LucasgColombo), [Gilherme Fabrício](https://github.com/GuiDev115), [Rafael furtado](https://github.com/zSchwi)
