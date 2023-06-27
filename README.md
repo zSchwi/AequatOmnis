@@ -21,7 +21,7 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    - Atualiza
    - Visualiza
    - Exclui
-- Carrinho RF
+- Gerenciar Carrinho RF
    - Visualizar produtos adicionados
    - Excluir produtos
    - Alterar quantidade
