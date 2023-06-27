@@ -5,8 +5,13 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
 
 ## Principais Funcionalidades:
 - Login (Cliente/ADM) RF
-- Cadastro de Cliente RF
-- Gerenciamento de Produto RF
+- Cadastro (Cliente/ADM) RF
+- Gerenciar perfil de usuário RF
+   - Cadastrar
+   - Atualizar 
+   - Excluir 
+   - Visualizar
+- Gerenciar Produto RF
    - Cadastrar
    - Atualizar 
    - Excluir 
