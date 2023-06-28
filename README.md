@@ -38,7 +38,11 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
 
 ## Tecnologias utilizadas:
 1. FrontEnd:
-   >- adicionar
+   >- VueJs 3
+   >- Vuetify 3.3 (Icarus)
+   >- HTML
+   >- CSS
+   >- JS
 2. BackEnd:
    >- adicionar
 3. Banco de Dados:
