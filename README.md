@@ -48,21 +48,21 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
 ```
    ◉ VueJs 3
    ◉ Vuetify 3.3 (Icarus)
-   ◉ HTML
-   ◉ CSS
+   ◉ HTML 5
+   ◉ CSS 3
    ◉ JS
 ```
 2. BackEnd:
  ```
-   ◉ NodeJS
-   ◉ Nodemon
-   ◉ Multer
+   ◉ NodeJS 18.16
+   ◉ Nodemon 2.0
+   ◉ Multer 1.4
    ◉ Bcryptjs (*)
    ◉ Crypto (*)
 ```
 3. Banco de Dados:
 ```
-   ◉ mongoDB
+   ◉ mongoDB 6.0
    ◉ mongoose
 ```
 4. Servidor:
