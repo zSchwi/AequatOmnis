@@ -44,11 +44,12 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    >- CSS
    >- JS
 2. BackEnd:
-   >- adicionar
+   >- NodeJS
 3. Banco de Dados:
-   >- adicionar
+   >- mongoDB
 4. Servidor:
-   >- adicionar
+   >- npm serve
+   >- Apache2
 
 #
 Integrantes: [lucas gomes colombo](https://github.com/LucasgColombo), [Gilherme Fabrício](https://github.com/GuiDev115), [Rafael furtado](https://github.com/zSchwi)
