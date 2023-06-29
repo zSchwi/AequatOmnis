@@ -57,6 +57,6 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    >- Apache2
 
 #
-Integrantes: [lucas gomes colombo](https://github.com/LucasgColombo), [Gilherme Fabrício](https://github.com/GuiDev115), [Rafael furtado](https://github.com/zSchwi)
+Integrantes: [lucas gomes colombo](https://github.com/LucasgColombo), [Guilherme Fabrício](https://github.com/GuiDev115), [Rafael furtado](https://github.com/zSchwi)
 
 (*) Se caso der tempo para aplicar, iremos colocar criptografia no projeto
