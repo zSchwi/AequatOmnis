@@ -71,6 +71,23 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    ◉ Apache2
 ```
 
+## Regras de uso do git
+#### Regras de commit
+```
+   - Limite o assunto do commit a 50 caracteres.
+   - Utilizar verbos no imperativo (atualizado, alterado, adicionado, etc.).
+   - Procure ser direto e explicativo em seus commits.
+   - Realize pequenos commits, sempre mantendo a ultima versão mais estável para o commit atual.
+   - Não utilizar pontos finais.
+```
+
+#### Uso de branches
+```
+   - Caso haja alteração na documentação, alterar diretamente na main.
+   - Caso haja alteração no código, utilize uma branch separada.
+   - Não realizar merge da branch para a main sem que o código esteja funcional ou ser apenas um teste.
+```
+
 #
 Integrantes: [Lucas Gomes Colombo](https://github.com/LucasgColombo), [Guilherme Fabrício](https://github.com/GuiDev115), [Rafael Furtado](https://github.com/zSchwi)
 
