@@ -127,7 +127,7 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    │   |    ├── router
    │   |    ├── view
    │   |    ├── App.vue
-   │   |     └── main.js
+   │   |    └── main.js
    │   | 
    │   ├── index.html
    │   ├── package-lock.json
