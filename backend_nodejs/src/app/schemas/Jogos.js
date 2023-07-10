@@ -15,14 +15,6 @@ const ProjectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    priority: {
-        type: Number,
-        required: true,
-    },
-    deadline: {
-        type: String,
-        required: true,
-    },
     featuredImage: {
         type: String,
         required: false,
@@ -47,4 +39,4 @@ ProjectSchema.pre("save", function(next) {
     next();
 })
 
-export default mongoose.model('Project', ProjectSchema);
+export default mongoose.model('Jogos', ProjectSchema);

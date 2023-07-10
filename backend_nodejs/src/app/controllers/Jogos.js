@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import Project from '@/app/schemas/Project';
+import Project from '@/app/schemas/Jogos';
 import Slugfy from '../../utils/Slugfy';
 import slugify from 'slugify';
 import AuthMiddleware from '@/app/middlewares/Auth';
@@ -53,9 +53,9 @@ router.get('/', (req, res) => {
 
 
 
-router.post('/', AuthMiddleware, (req, res) => {
-    const { title, slug, description, category, priority, deadline } = req.body;
-    Project.create({ title, slug, description, category, priority, deadline })
+router.post('/', (req, res) => {
+    const { title, slug, description, category } = req.body;
+    Project.create({ title, slug, description, category })
         .then(project => {
             res.status(200).send(project);
         })

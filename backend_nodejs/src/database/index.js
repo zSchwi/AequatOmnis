@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.connect('mongodb://localhost/portifolio-pessoal', {
+mongoose.connect('mongodb://localhost/AequatOmnis', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })

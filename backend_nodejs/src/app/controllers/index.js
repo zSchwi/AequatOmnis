@@ -1,6 +1,6 @@
 import Auth from './Auth';
-import Portifolio from './Portifolio';
+import Jogos from './Jogos';
 import Uploads from './Uploads';
 
 
-export { Auth, Portifolio, Uploads };
+export { Auth, Jogos, Uploads };
