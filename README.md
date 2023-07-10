@@ -88,6 +88,22 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    - Não realizar merge da branch para a main sem que o código esteja funcional ou ser apenas um teste.
 ```
 
+## Organização de pastas
+```
+   ├── Documentação
+   │   ├── Padrões adotados
+   │   │    ├── Padrões de codificação.pdf
+   │   │    └── Regras de Verificação e Analise de Requisitos.pdf
+   |   | 
+   │   ├── Requisitos
+   │   │    └── Documento de Requisitos.pdf
+   |   |
+   │   └── Diagramas
+   │        ├── Diagrama de casos de uso.pdf
+   |        ├── Diagrama de classes.pdf
+   │        └── Diagrama de implantação.pdf
+```
+
 #
 Integrantes: [Lucas Gomes Colombo](https://github.com/LucasgColombo), [Guilherme Fabrício](https://github.com/GuiDev115), [Rafael Furtado](https://github.com/zSchwi)
 
