@@ -103,6 +103,20 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    |        ├── Diagrama de classes.pdf
    |        ├── Diagrama de implantação.pdf
    │        └── Diagrama de sequencia.pdf
+   │  
+   ├──   BackEnd
+   │   ├── node_modules
+   │   ├── src
+   │        ├── app
+   │        ├── config
+   │        ├── database
+   │        ├── modules
+   │        ├── resources/mail/auth
+   │        ├── index.js
+   │        └── swagger.json
+   │   ├── Upload/imgs
+   │        └── icon.png
+
 ```
 
 #
