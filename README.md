@@ -101,7 +101,8 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    │   └── Diagramas
    │        ├── Diagrama de casos de uso.pdf
    |        ├── Diagrama de classes.pdf
-   │        └── Diagrama de implantação.pdf
+   |        ├── Diagrama de implantação.pdf
+   │        └── Diagrama de sequencia.pdf
 ```
 
 #
