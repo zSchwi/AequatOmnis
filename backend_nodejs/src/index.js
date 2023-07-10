@@ -1,6 +1,6 @@
 import express, { Router } from 'express';
 import bodyParser from 'body-parser';
-import { Portifolio, Auth, Uploads } from '@/app/controllers';
+import { Jogos, Auth, Uploads } from '@/app/controllers';
 import User from './app/schemas/User';
 import swaggerUi from 'swagger-ui-express';
 
@@ -12,7 +12,7 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/portifolio', Portifolio);
+app.use('/jogos', Jogos);
 app.use('/auth', Auth);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use('/uploads', Uploads);
