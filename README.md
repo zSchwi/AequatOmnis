@@ -104,18 +104,35 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    |        ├── Diagrama de implantação.pdf
    │        └── Diagrama de sequencia.pdf
    │  
-   ├──   BackEnd
+   ├── BackEnd
    │   ├── node_modules
    │   ├── src
-   │        ├── app
-   │        ├── config
-   │        ├── database
-   │        ├── modules
-   │        ├── resources/mail/auth
-   │        ├── index.js
-   │        └── swagger.json
-   │   ├── Upload/imgs
+   │   |    ├── app
+   │   |    ├── config
+   │   |    ├── database
+   │   |    ├── modules
+   │   |    ├── resources/mail/auth
+   │   |    ├── index.js
+   │   |    └── swagger.json
+   |   |
+   │   └── Upload/imgs
    │        └── icon.png
+   |
+   ├── FrontEnd
+   │   ├── node_modules
+   │   ├── public
+   │   ├── src
+   │   |    ├── assets
+   │   |    ├── components
+   │   |    ├── router
+   │   |    ├── view
+   │   |    ├── App.vue
+   │   |     └── main.js
+   │   | 
+   │   ├── index.html
+   │   ├── package-lock.json
+   │   ├── package.json
+   │   └── vite.config.js
 
 ```
 
