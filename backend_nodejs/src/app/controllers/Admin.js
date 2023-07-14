@@ -6,7 +6,6 @@ import User from "@/app/schemas/User";
 import authConfig from "@/config/Auth"
 import Mailer from "@/modules/Mailer";
 
-
 const router = new Router();
 
 const generateToken = params => {

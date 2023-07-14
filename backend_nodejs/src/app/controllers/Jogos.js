@@ -35,8 +35,6 @@ router.get('/', (req, res) => {
                     title: project.title,
                     category: project.category,
                     description: project.description,
-                    priority: project.priority,
-                    deadline: project.deadline,
                     slug: project.slug,
                     featuredImage: project.featuredImage,
                 };
@@ -68,14 +66,14 @@ router.post('/', (req, res) => {
         });
 });
 
-router.put('/:projectId', AuthMiddleware, AdminMiddleware, (req, res) => {
+router.put('/:projectId', (req, res) => {
 
     const { title, description, category } = req.body;
     let slug = undefined;
     if (title) {
         slug = Slugfy(title);
     }
-    Project.findByIdAndUpdate(req.params.projectId, { title, slug, description, category, priority, deadline }, { new: true })
+    Project.findByIdAndUpdate(req.params.projectId, { title, slug, description, category }, { new: true })
         .then(project => {
             res.status(200).send(project);
         })
@@ -109,6 +107,7 @@ router.post(
             Project.findByIdAndUpdate(
                     req.params.projectId, {
                         $set: {
+
                             featuredImage: file.path,
                         },
                     }, { new: true },
@@ -127,38 +126,5 @@ router.post(
         }
     },
 );
-
-router.post("/image", Multer.single("image"), (req, res) => {
-    console.log(req);
-    res.send();
-})
-
-router.post('/images/:projectId', Multer.array('images'), (req, res) => {
-
-    const { files } = req;
-
-    if (files && files.length > 0) {
-        const images = [];
-        files.forEach((file) => {
-            images.push(file.filename);
-        });
-        Project.findByIdAndUpdate(
-                req.params.projectId, {
-                    $set: { images },
-                }, { new: true },
-            )
-            .then((project) => {
-                return res.send({ project });
-            })
-            .catch((error) => {
-                console.error('Erro ao associar imagens ao projeto', error);
-                return res
-                    .status(500)
-                    .send({ error: 'Ocorreu um erro, tente novamente' });
-            });
-    } else {
-        return res.status(400).send({ error: 'Nenhuma imagem enviada' });
-    }
-});
 
 export default router;

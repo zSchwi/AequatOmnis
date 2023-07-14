@@ -1,6 +1,7 @@
-import Auth from './Auth';
+import Admin from './Admin';
 import Jogos from './Jogos';
 import Uploads from './Uploads';
+import Client from './Client';
 
 
-export { Auth, Jogos, Uploads };
+export { Admin, Jogos, Uploads, Client };
