@@ -2,7 +2,7 @@ import { Router } from "express";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import jwt from "jsonwebtoken";
-import User from "@/app/schemas/User";
+import Venda from "@/app/schemas/Venda";
 import authConfig from "@/config/Auth"
 import Mailer from "@/modules/Mailer";
 
@@ -14,32 +14,6 @@ const generateToken = params => {
             expiresIn: 86400,
         });
 };
-
-router.post('/register', (req, res) => {
-
-    const { email, name, password } = req.body;
-
-    User.findOne({ email })
-        .then(userData => {
-            if (userData) {
-                return res.status(400).send({ error: "usuario ja existe" });
-            } else {
-                User.create({ name, email, password })
-                    .then(user => {
-                        //user.password = undefined;
-                        return res.send({ user });
-                    })
-                    .catch(error => {
-                        console.error("erro ao salvar o usuario", error);
-                        return res.status(400).send({ error: "Registro falhou" });
-                    });
-            }
-        })
-        .catch(error => {
-            console.error("Error ao consultar usuario no banco de dados", err);
-            return res.status(500).send({ error: "Registro falhou" });
-        });
-});
 
 router.post("/login", (req, res) => {
     const { email, password } = req.body;
@@ -72,85 +46,39 @@ router.post("/login", (req, res) => {
         })
 });
 
-router.post("/forgot-password", (req, res) => {
-    const { email } = req.body;
+router.get('/', (req, res) => {
 
-    User.findOne({ email }).then(user => {
-        if (user) {
-            const token = crypto.randomBytes(20).toString("hex");
-            const expiration = new Date();
-            expiration.setHours(new Date().getHours() + 3);
-
-            User.findByIdAndUpdate(user.id, {
-                $set: {
-                    passwordResetToken: token,
-                    passwordResetTokenExpiration: expiration,
-                }
-            }).then(() => {
-                Mailer.sendMail({
-                    to: email,
-                    from: "webmaster@testeexpress.com",
-                    template: "auth/forgot_password",
-                    context: { token }
-                }, error => {
-                    if (error) {
-                        console.error("Erro ao enviar email", error);
-                        return res.status(400).send({ error: "Fail send recover password mail" });
-                    } else {
-                        return res.send();
-                    }
-                })
-            }).catch(error => {
-                console.error("Erro ao salvar o token de rec de senha", error);
-                return res.status(500).send({ error: "Intedrnal server error" });
-            })
-        } else {
-            return res.status(404).send({ error: "user not found" });
-        }
+    Project.find().then(projects => {
+        res.send(projects);
     }).catch(error => {
-        console.error("erro no forgot password", error);
-        return res.status(500).send({ error: "internal server error" });
+        console.error("Erro ao salvar novo projeto no banco de dados", error);
+        res.status(400)
+            .send({
+                error: 'Não foi possivel obter os dados do seu projeto. Verifique os dados e tente novamente',
+            });
     })
+
 });
 
-router.post("/reset-password", (req, res) => {
+router.put('/:projectId', (req, res) => {
 
-    const { email, token, newPassword } = req.body;
-
-    User.findOne({ email })
-        .select("+passwordResetToken passwordResetTokenExpiration")
-        .then(user => {
-            if (user) {
-                if (token != user.passwordResetToken) {
-                    return res.status(400).send({ error: "invalid token" })
-                } else {
-                    user.passwordResetToken = undefined;
-                    user.passwordResetTokenExpiration = undefined;
-                    user.password = newPassword;
-
-                    user.save().then(() => {
-                        res.send({ message: "senha trocada com sucesso" });
-                    }).catch(error => {
-                        console.error("error ao salvar nova senha", error);
-                        return res.status(500).send({ error: "internal error server" })
-                    })
-                }
-
-            } else {
-                return res.status(404).send({ error: "user not found" });
-            }
+    const { title, description, category } = req.body;
+    let slug = undefined;
+    if (title) {
+        slug = Slugfy(title);
+    }
+    Project.findByIdAndUpdate(req.params.projectId, { title, slug, description, category }, { new: true })
+        .then(project => {
+            res.status(200).send(project);
         })
+        .catch(error => {
+            console.error("Erro ao obter o objeto no banco de dados", error);
+            res.status(400)
+                .send({
+                    error: 'Não foi possivel atualizar o seu projeto. Verifique os dados e tente novamente',
+                });
+        });
 
-});
-
-router.delete('/:UserId', (req, res) => {
-
-    User.findByIdAndRemove(req.params.UserId).then(() => {
-        res.send({ message: "Projeto removido com sucesso" });
-    }).catch(error => {
-        console.error("Erro ao remover o projeto", error);
-        res.status(400).sent9({ message: "Erro ao remover o projeto, tente novamente" })
-    })
 });
 
 export default router;
