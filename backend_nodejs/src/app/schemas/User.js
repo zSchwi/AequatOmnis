@@ -40,4 +40,4 @@ UserSchema.pre("save", function(next) {
     });
 });
 
-export default mongoose.model('User', UserSchema);
+export default mongoose.model('Client', UserSchema);
