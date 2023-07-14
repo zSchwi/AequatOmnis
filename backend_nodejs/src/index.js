@@ -23,9 +23,9 @@ app.get("/", function(req, res) {
 });
 
 function createAdminUser() {
-    const name = 'Guilherme';
-    const email = 'guilherme.rosa@estudante.ufla.com';
-    const password = 'botw';
+    const name = 'admin';
+    const email = 'admin';
+    const password = 'admin';
     const administrador = true;
 
     User.findOne({ email })
