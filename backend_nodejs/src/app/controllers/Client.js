@@ -24,7 +24,7 @@ router.post('/register', (req, res) => {
             if (userData) {
                 return res.status(400).send({ error: "usuario ja existe" });
             } else {
-                User.create({ name, email, password })
+                User.create({ name, email, password, administrador })
                     .then(user => {
                         //user.password = undefined;
                         return res.send({ user });

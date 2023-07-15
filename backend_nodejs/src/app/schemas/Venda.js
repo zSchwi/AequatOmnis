@@ -19,10 +19,6 @@ const ProjectSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    Estoque: {
-        type: Boolean,
-        required: true,
-    },
     total: {
         type: Number,
         required: true,

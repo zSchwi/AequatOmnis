@@ -20,7 +20,6 @@ const UserSchema = new mongoose.Schema({
     administrador: {
         type: Boolean,
         select: false,
-        required: true,
     },
     passwordResetToken: {
         type: String,

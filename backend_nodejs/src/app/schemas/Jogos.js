@@ -2,17 +2,33 @@
     import Slugfy from '../../utils/Slugfy';
 
     const ProjectSchema = new mongoose.Schema({
-        title: {
+        titulo: {
             type: String,
             required: true,
             unique: true,
         },
-        slug: {
+        descricao: {
             type: String,
-            unique: true,
+            required: true,
         },
-        description: {
+        empresa: {
             type: String,
+            required: true,
+        },
+        genero: {
+            type: String,
+            required: true,
+        },
+        plataforma: {
+            type: String,
+            required: true,
+        },
+        valor: {
+            type: Number,
+            required: true,
+        },
+        estoque: {
+            type: Boolean,
             required: true,
         },
         featuredImage: {
@@ -22,10 +38,6 @@
         images: [{
             type: String,
         }, ],
-        category: {
-            type: String,
-            required: true,
-        },
         createdAt: {
             type: Date,
             default: Date.now,
@@ -33,10 +45,5 @@
 
     });
 
-    ProjectSchema.pre("save", function(next) {
-        const title = this.title;
-        this.slug = Slugfy(title);
-        next();
-    })
 
     export default mongoose.model('Jogos', ProjectSchema);
