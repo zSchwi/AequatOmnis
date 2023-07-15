@@ -153,4 +153,19 @@ router.delete('/:UserId', (req, res) => {
     })
 });
 
+router.post('/compra', (req, res) => {
+    const { email, } = req.body;
+    Project.create({ titulo, descricao, empresa, genero, plataforma, valor, estoque })
+        .then(project => {
+            res.status(200).send(project);
+        })
+        .catch(error => {
+            console.error("Erro ao salvar novo projeto no banco de dados", error);
+            res.status(400)
+                .send({
+                    error: 'Não foi possivel salvar seu projeto. Verifique os dados e tente novamente',
+                });
+        });
+});
+
 export default router;
