@@ -1,20 +1,21 @@
 <script setup>
-    //import http from '@/services/https.js'
-    import { reactive } from 'vue';
+import http from '@/services/http.js'
+import { reactive } from 'vue';
 
 
-    const usuario = reactive({
-        email: "",
-        password: "" 
-    })
+const usuario = reactive({
+    email: "",
+    password: ""
+})
 
-    const login = async () => {
-        try {
-            //const {data} = await http.post('/auth')
-        } catch (error) {
-            console.log(error?.response?.data)
-        }
+const login = async () => {
+    try {
+        const { data } = await http.post('/client/login', usuario)
+        console.log(data)
+    } catch (error) {
+        console.log(error?.response?.data)
     }
+}
 </script>
 
 
@@ -42,13 +43,14 @@
                         <v-row class="d-flex justify-center">
 
                             <v-col cols="12" md="7">
-                                <v-text-field v-model="usuario.password" type="password" label="Senha" required></v-text-field>
+                                <v-text-field v-model="usuario.password" type="password" label="Senha"
+                                    required></v-text-field>
                             </v-col>
 
                         </v-row>
 
                         <v-row class="justify-center">
-                            <v-btn color="green-darken-1">Confirmar</v-btn>
+                            <v-btn type="submit" color="green-darken-1">Confirmar</v-btn>
                         </v-row>
                     </v-container>
                 </v-col>
