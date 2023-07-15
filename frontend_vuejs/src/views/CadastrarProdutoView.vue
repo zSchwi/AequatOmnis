@@ -1,12 +1,16 @@
 <script setup>
+// TODO: Melhorar o formulario, colocando um boolean
 import { reactive } from 'vue';
+import http from '@/services/http.js'
 
 const dadosProduto = reactive({
-    nome: "",
-    empresa: "",
-    genero: "",
-    plataforma: "",
-    valor: ""
+    titulo: '',
+    descricao: '',
+    empresa: '',
+    genero: '',
+    plataforma: '',
+    valor: '',
+    estoque: ''
 
 })
 
@@ -15,7 +19,7 @@ const enviarDadosProduto = async () => {
         const { data } = await http.post('/jogos', dadosProduto)
         console.log(data)
     } catch (error) {
-        console.log(error?.response?.data)
+        console.log(error?.response?.data) 
     }
 }
 
@@ -38,7 +42,7 @@ const enviarDadosProduto = async () => {
                             </v-row>
                             <v-row>
                                 <v-col col="9" md="9">
-                                    <v-text-field v-model="dadosProduto.nome" label="Nome completo:"
+                                    <v-text-field v-model="dadosProduto.titulo" label="Nome completo:"
                                         required></v-text-field>
                                 </v-col>
                             </v-row>
@@ -46,17 +50,32 @@ const enviarDadosProduto = async () => {
                             <v-row>
 
                                 <v-col cols="5" md="3">
+                                    <v-text-field type="text" v-model="dadosProduto.descricao" label="descricao:"
+                                        required></v-text-field>
+                                </v-col>
+
+                                <v-col cols="5" md="3">
                                     <v-text-field type="text" v-model="dadosProduto.empresa" label="Empresa:"
                                         required></v-text-field>
                                 </v-col>
 
                                 <v-col cols="5" md="3">
-                                    <v-text-field type="text" v-model="dadosProduto.genero" label="Genero:"
+                                    <v-text-field type="text" v-model="dadosProduto.genero" label="genero"
                                         required></v-text-field>
                                 </v-col>
 
                                 <v-col cols="5" md="3">
                                     <v-text-field type="text" v-model="dadosProduto.plataforma" label="Plataforma"
+                                        required></v-text-field>
+                                </v-col>
+
+                                <v-col cols="5" md="3">
+                                    <v-text-field type="text" v-model="dadosProduto.valor" label="valor"
+                                        required></v-text-field>
+                                </v-col>
+
+                                <v-col cols="5" md="3">
+                                    <v-text-field type="text" v-model="dadosProduto.estoque" label="estoque"
                                         required></v-text-field>
                                 </v-col>
 

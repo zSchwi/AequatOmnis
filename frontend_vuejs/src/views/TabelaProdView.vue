@@ -28,14 +28,16 @@
         </thead>
         <tbody>
             <tr v-for="(jogo, i) in jogos" :key="i">
-                <td>{{ jogo.nome }}</td>
+                <td>{{ jogo.titulo }}</td>
+                <td>{{ jogo.descricao }}</td>
                 <td>{{ jogo.empresa }}</td>
                 <td>{{ jogo.genero }}</td>
                 <td>{{ jogo.plataforma }}</td>
                 <td>{{ jogo.valor }}</td>
+                <td>{{ jogo.estoque }}</td>
                 <td class="d-flex justify-end">
                     <v-btn icon="mdi-update"></v-btn>
-                    <v-btn icon="mdi-delete"></v-btn>
+                    <v-btn @click="deletarProduto(jogo._id)" icon="mdi-delete"></v-btn>
                     <v-btn icon="mdi-pencil"></v-btn>
                 </td>
             </tr>
@@ -51,47 +53,41 @@
 
 
 <script setup>
-import { ref } from 'vue';
+import http from '../services/http.js'
+import { onBeforeMount, ref } from 'vue';
+
+onBeforeMount(() => {
+    getProdutos()
+})
+
+
+
 
 const jogos = ref([
     {
-        nome: 'Dark Souls',
-        empresa: 'essa daqui',
-        genero: 'SoulsLike',
-        plataforma: 'PC',
-        valor: 35
+        _id: '',
+        titulo: '',
+        descricao: '',
+        empresa: '',
+        genero: '',
+        plataforma: '',
+        valor: '',
+        estoque: ''
     },
-
-    {
-        nome: 'Fallout 4',
-        empresa: 'essa daqui',
-        genero: 'SoulsLike',
-        plataforma: 'PC',
-        valor: 35
-    },
-
-    {
-        nome: 'Skyrim',
-        empresa: 'essa daqui',
-        genero: 'SoulsLike',
-        plataforma: 'PC',
-        valor: 35
-    },
-
-    {
-        nome: 'Battlefield 4',
-        empresa: 'essa daqui',
-        genero: 'SoulsLike',
-        plataforma: 'PC',
-        valor: 35
-    },
-
-    {
-        nome: 'Forza Horizon',
-        empresa: 'essa daqui',
-        genero: 'SoulsLike',
-        plataforma: 'PC',
-        valor: 35
-    }
 ])
+
+const getProdutos = async () => {
+    await http.get('/jogos/tudo').then(res => {
+        const jogos = res.data
+        console.log(jogos)
+        
+    })
+}
+
+
+const deletarProduto =  (id) => {
+    http.delete().then(res => {
+
+    })
+}
 </script>
