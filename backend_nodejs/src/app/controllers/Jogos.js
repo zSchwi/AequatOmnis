@@ -52,8 +52,8 @@ router.get('/', (req, res) => {
 
 
 router.post('/', (req, res) => {
-    const { title, slug, description, category } = req.body;
-    Project.create({ title, slug, description, category })
+    const { titulo, descricao, empresa, genero, plataforma, valor, estoque } = req.body;
+    Project.create({ titulo, descricao, empresa, genero, plataforma, valor, estoque })
         .then(project => {
             res.status(200).send(project);
         })
