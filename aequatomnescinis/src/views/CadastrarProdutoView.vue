@@ -1,9 +1,36 @@
+<script setup>
+import { reactive } from 'vue';
+
+const dadosProduto = reactive({
+    nome: "",
+    empresa: "",
+    genero: "",
+    plataforma: "",
+    valor: ""
+
+})
+
+const enviarDadosProduto = async () => {
+    try {
+        const { data } = await http.post('/jogos', dadosProduto)
+        console.log(data)
+    } catch (error) {
+        console.log(error?.response?.data)
+    }
+}
+
+</script>
+
+
+
+
+
 <template>
     <v-main>
         <v-container>
             <v-card>
 
-                <v-form>
+                <v-form @submit.prevent="enviarDadosProduto">
                     <v-col cols="12">
                         <v-container>
                             <v-row class="d-flex justify-center mb-5">
@@ -11,29 +38,34 @@
                             </v-row>
                             <v-row>
                                 <v-col col="9" md="9">
-                                    <v-text-field label="Nome completo:" required></v-text-field>
+                                    <v-text-field v-model="dadosProduto.nome" label="Nome completo:"
+                                        required></v-text-field>
                                 </v-col>
                             </v-row>
 
                             <v-row>
 
                                 <v-col cols="5" md="3">
-                                    <v-text-field type="text" label="Empresa:" required></v-text-field>
+                                    <v-text-field type="text" v-model="dadosProduto.empresa" label="Empresa:"
+                                        required></v-text-field>
                                 </v-col>
 
                                 <v-col cols="5" md="3">
-                                    <v-text-field type="text" label="Genero:" required></v-text-field>
+                                    <v-text-field type="text" v-model="dadosProduto.genero" label="Genero:"
+                                        required></v-text-field>
                                 </v-col>
 
                                 <v-col cols="5" md="3">
-                                    <v-text-field type="text" label="Plataforma" required></v-text-field>
+                                    <v-text-field type="text" v-model="dadosProduto.plataforma" label="Plataforma"
+                                        required></v-text-field>
                                 </v-col>
 
                             </v-row>
 
                             <v-row>
                                 <v-col cols="5" md="3">
-                                    <v-text-field type="text" label="Valor:" required></v-text-field>
+                                    <v-text-field type="text" v-model="dadosProduto.valor" label="Valor:"
+                                        required></v-text-field>
                                 </v-col>
                             </v-row>
 
