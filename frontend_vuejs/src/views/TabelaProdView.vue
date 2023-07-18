@@ -54,14 +54,11 @@
 
 <script setup>
 import http from '../services/http.js'
-import { onBeforeMount, ref } from 'vue';
+import { ref, onMounted} from 'vue';
 
-onBeforeMount(() => {
+onMounted(() => {
     getProdutos()
 })
-
-
-
 
 const jogos = ref([
     {

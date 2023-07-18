@@ -11,6 +11,22 @@
             <v-btn color="primary" variant="text">Entrar</v-btn>
         </router-link>
 
+        <router-link to="/tabelavenda">
+            <v-btn color="primary" variant="text">Tabela Venda</v-btn>
+        </router-link>
+
+        <router-link to="/tabelaprod">
+            <v-btn color="primary" variant="text">Tabela Produto</v-btn>
+        </router-link>
+
+        <router-link to="/cadastroprod">
+            <v-btn color="primary" variant="text">Cadastrar Produto</v-btn>
+        </router-link>
+
+        <router-link to="/formvenda">
+            <v-btn color="primary" variant="text">Vendas</v-btn>
+        </router-link>
+
 
         <v-btn color="primary" variant="text">Cadastrar</v-btn>
 

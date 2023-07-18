@@ -11,7 +11,7 @@ const router = new Router();
 
 //Mostra apenas tudo
 
-router.get('/TUDO', (req, res) => {
+router.get('/tudo', (req, res) => {
 
     Project.find().then(projects => {
         res.send(projects);

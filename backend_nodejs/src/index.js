@@ -9,6 +9,9 @@ const swaggerFile = require('./swagger.json');
 const app = express();
 const port = 3000;
 
+const cors = require('cors')
+
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

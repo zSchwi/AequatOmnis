@@ -27,10 +27,23 @@ router.post('/register', (req, res) => {
                 User.create({ name, email, password, administrador })
                     .then(user => {
                         //user.password = undefined;
+                        res.json({
+                            sucess: true,
+                            message: "Usuário criado com sucesso",
+                            toke: resp.session_token
+                        })
                         return res.send({ user });
+
                     })
                     .catch(error => {
                         console.error("erro ao salvar o usuario", error);
+
+                        res.json({
+                            sucesse: false,
+                            message: error.error_messager,
+                            error: error
+                        })
+
                         return res.status(400).send({ error: "Registro falhou" });
                     });
             }
@@ -53,13 +66,16 @@ router.post("/login", (req, res) => {
                     .then(result => {
                         if (result) {
                             const token = generateToken({ uid: user.id })
-                            return res.send({ token: token, tokenExpiration: "1d" })
+
+                            return res.json({ token: token, tokenExpiration: "1d", message: "Usuário criado com sucesso" })
+
                         } else {
                             return res.status(400).send({ error: "Senha invalida" });
                         }
                     })
                     .catch(error => {
                         console.error("Error ao verificar senha", error);
+
                         return res.status(500).send({ error: "user not found" });
                     });
             } else {
