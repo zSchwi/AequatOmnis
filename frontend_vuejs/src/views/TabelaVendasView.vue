@@ -1,5 +1,5 @@
 <template>
-    <v-table class="">
+    <v-table>
         <thead>
             <tr>
                 <th class="text-left">

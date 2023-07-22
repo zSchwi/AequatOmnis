@@ -10,40 +10,40 @@ const router = createRouter({
     history: createWebHistory(
         import.meta.env.BASE_URL),
     routes: [{
-            path: '/',
-            name: 'home',
-            component: HomeView
-        },
+        path: '/',
+        name: 'home',
+        component: HomeView
+    },
 
-        {
-            path: '/login',
-            name: 'loginscreen',
-            component: LoginScreen
-        },
+    {
+        path: '/login',
+        name: 'loginscreen',
+        component: LoginScreen
+    },
 
-        {
-            path: '/tabelaprod',
-            name: 'tabelaprod',
-            component: TabelaProd
-        },
+    {
+        path: '/tabelaprod',
+        name: 'tabelaprod',
+        component: TabelaProd
+    },
 
-        {
-            path: '/tabelavenda',
-            name: 'tabelavenda',
-            component: TabelaVenda
-        },
+    {
+        path: '/tabelavenda',
+        name: 'tabelavenda',
+        component: TabelaVenda
+    },
 
-        {
-            path: '/cadastrar',
-            name: 'cadastrarproduto',
-            component: CadastrarProd
-        },
+    {
+        path: '/cadastrarprod',
+        name: 'cadastrarproduto',
+        component: CadastrarProd
+    },
 
-        {
-            path: '/formvenda',
-            name: 'formvenda',
-            component: FormularioVenda
-        },
+    {
+        path: '/formvenda',
+        name: 'formvenda',
+        component: FormularioVenda
+    },
 
     ]
 })

@@ -11,7 +11,7 @@ const router = new Router();
 
 //Mostra apenas tudo
 
-router.get('/tudo', (req, res) => {
+router.get('/', (req, res) => {
 
     Project.find().then(projects => {
         res.send(projects);
@@ -22,32 +22,9 @@ router.get('/tudo', (req, res) => {
                 error: 'Não foi possivel obter os dados do seu projeto. Verifique os dados e tente novamente',
             });
     })
-
 })
 
 //Mostra apenas Titulo, Categoria, Descricao e etc.
-
-router.get('/', (req, res) => {
-
-    Project.find().then((data) => {
-            const projects = data.map((project) => {
-                return {
-                    title: project.title,
-                    category: project.category,
-                    description: project.description,
-                    slug: project.slug,
-                    featuredImage: project.featuredImage,
-                };
-            })
-            res.send(projects);
-        })
-        .catch((error) => {
-            console.error('Erro ao obter os dados do projeto. ', error);
-            return res.status(400).send({
-                error: 'Não foi possível obter os dados do projeto. Tente novamente. ',
-            });
-        });
-});
 
 
 

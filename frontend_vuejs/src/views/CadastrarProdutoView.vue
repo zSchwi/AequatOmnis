@@ -18,6 +18,7 @@ const enviarDadosProduto = async () => {
     try {
         const { data } = await http.post('/jogos', dadosProduto)
         console.log(data)
+        alert("Dado cadastrado com sucesso!")
     } catch (error) {
         console.log(error?.response?.data) 
     }
@@ -81,16 +82,11 @@ const enviarDadosProduto = async () => {
 
                             </v-row>
 
-                            <v-row>
-                                <v-col cols="5" md="3">
-                                    <v-text-field type="text" v-model="dadosProduto.valor" label="Valor:"
-                                        required></v-text-field>
-                                </v-col>
-                            </v-row>
-
                             <v-row class="justify-end">
                                 <v-btn type="submit" color="green-darken-1" class="mx-5">Confirmar</v-btn>
-                                <v-btn color="red-darken-1">Cancelar</v-btn>
+                                <router-link to="/tabelaprod">
+                                    <v-btn color="red-darken-1">Cancelar</v-btn>
+                                </router-link>
                             </v-row>
                         </v-container>
                     </v-col>

@@ -11,6 +11,10 @@
             <v-btn color="primary" variant="text">Entrar</v-btn>
         </router-link>
 
+        <router-link to="/tabelaprod">
+            <v-btn color="primary" variant="text">TabelaProd</v-btn>
+        </router-link>
+
 
         <v-btn color="primary" variant="text">Cadastrar</v-btn>
 

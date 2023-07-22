@@ -7,7 +7,7 @@ import swaggerUi from 'swagger-ui-express';
 const swaggerFile = require('./swagger.json');
 
 const app = express();
-const port = 3000;
+const port = 27017;
 
 const cors = require('cors')
 
@@ -21,7 +21,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use('/uploads', Uploads);
 app.use("/client", Client);
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
     res.sendFile(__dirname + "/front/index.html")
 });
 
