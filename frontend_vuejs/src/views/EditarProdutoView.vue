@@ -33,8 +33,7 @@ const getProdutosEspecifico = (idEspecifico) => {
 }
 const editarDadosProduto = () => {
     try {
-        const { data } = http.put(`/${idEspecifico}`, dadosProduto)
-        console.log(data)
+        http.put(`/jogos/${idEspecifico}`, dadosProduto)
         alert("Dado editado com sucesso!")
     } catch (error) {
         console.log(error?.response?.data) 
