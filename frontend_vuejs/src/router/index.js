@@ -1,10 +1,12 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, useRouter} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginScreen from '../views/LoginScreen.vue'
 import TabelaProd from '../views/TabelaProdView.vue'
 import TabelaVenda from '../views/TabelaVendasView.vue'
 import CadastrarProd from '../views/CadastrarProdutoView.vue'
 import FormularioVenda from '../views/FormularioVendaView.vue'
+import EditarProd from '../views/EditarProdutoView.vue'
+
 
 const router = createRouter({
     history: createWebHistory(
@@ -43,6 +45,12 @@ const router = createRouter({
         path: '/formvenda',
         name: 'formvenda',
         component: FormularioVenda
+    },
+
+     {
+        path: '/editarproduto/:id',
+        name: 'editarproduto',
+        component: EditarProd
     },
 
     ]

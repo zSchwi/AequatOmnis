@@ -43,17 +43,29 @@ router.post('/', (req, res) => {
         });
 });
 
+router.get('/:projectId', (req, res) => {
+
+    Project.findById(req.params.projectId).then(projects => {
+        res.send(projects);
+    }).catch(error => {
+        console.error("Erro ao salvar novo projeto no banco de dados", error);
+        res.status(400)
+            .send({
+                error: 'Não foi possivel obter os dados do seu projeto. Verifique os dados e tente novamente',
+            });
+    })
+})
+
 router.put('/:projectId', (req, res) => {
 
-    const { title, description, category } = req.body;
+    const { titulo, descricao, empresa, genero, plataforma, valor, estoque } = req.body;
     let slug = undefined;
-    if (title) {
-        slug = Slugfy(title);
-    }
-    Project.findByIdAndUpdate(req.params.projectId, { title, slug, description, category }, { new: true })
+
+    Project.findByIdAndUpdate(req.params.projectId, { titulo, descricao, empresa, genero, plataforma, valor, estoque }, { new: true })
         .then(project => {
             res.status(200).send(project);
         })
+
         .catch(error => {
             console.error("Erro ao obter o objeto no banco de dados", error);
             res.status(400)
@@ -70,7 +82,7 @@ router.delete('/:projectId', (req, res) => {
         res.send({ message: "Projeto removido com sucesso" });
     }).catch(error => {
         console.error("Erro ao remover o projeto", error);
-        res.status(400).sent9({ message: "Erro ao remover o projeto, tente novamente" })
+        res.status(400).sent({ message: "Erro ao remover o projeto, tente novamente" })
     })
 });
 
