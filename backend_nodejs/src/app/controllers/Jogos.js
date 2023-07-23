@@ -58,21 +58,20 @@ router.get('/:projectId', (req, res) => {
 
 router.put('/:projectId', (req, res) => {
 
-    const { titulo, descricao, empresa, genero, plataforma, valor, estoque } = req.body;
-    let slug = undefined;
+     const { descricao, empresa, estoque, genero, plataforma, titulo, valor} = req.body;
 
-    Project.findByIdAndUpdate(req.params.projectId, { titulo, descricao, empresa, genero, plataforma, valor, estoque }, { new: true })
-        .then(project => {
-            res.status(200).send(project);
-        })
+     Project.findByIdAndUpdate(req.params.projectId, { titulo, descricao, empresa, genero, plataforma, valor, estoque }, { new: true })
+         .then(project => {
+            console.log(project)
+             res.status(200).send(project);
+         })
 
-        .catch(error => {
+         .catch(error => {
             console.error("Erro ao obter o objeto no banco de dados", error);
-            res.status(400)
-                .send({
+            res.status(400).send({
                     error: 'Não foi possivel atualizar o seu projeto. Verifique os dados e tente novamente',
                 });
-        });
+           });
 
 });
 

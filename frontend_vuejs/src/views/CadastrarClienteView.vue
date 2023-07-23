@@ -10,9 +10,9 @@ const dadosCliente = reactive({
     admin: ''
 })
 
-const enviarDadosCliente = async () => {
+const enviarDadosCliente = () => {
     try {
-        const { data } = await http.post('/client/register', dadosCliente)
+        const { data } = http.post('/client/register', dadosCliente)
         console.log(data)
         alert("Dado cadastrado com sucesso!")
     } catch (error) {

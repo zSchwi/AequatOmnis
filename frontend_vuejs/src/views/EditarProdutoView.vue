@@ -8,37 +8,39 @@ const route = useRoute()
 const idEspecifico = route.params.id
 
 const dadosProduto = ref({
-    titulo: "",
-    descricao: "",
-    empresa: "",
-    genero: "",
-    plataforma: "",
-    valor: "",
-    estoque: ""
+    titulo: '',
+    descricao: '',
+    empresa: '',
+    genero: '',
+    plataforma: '',
+    valor: '',
+    estoque: ''
 })
 
 onMounted (() => {
     getProdutosEspecifico(idEspecifico)
+    console.log("montei aqui")
+    
+   
 })
-
-
 const getProdutosEspecifico = (idEspecifico) => {
     http.get(`/jogos/${idEspecifico}`).then(res => {
         dadosProduto.value = res.data
-        console.log(dadosProduto)
-
     }).catch(error => {
         console.log(`Erro ao pegar os dados ${error}`)
     })
 }
+
 const editarDadosProduto = () => {
     try {
-        http.put(`/jogos/${idEspecifico}`, dadosProduto)
-        alert("Dado editado com sucesso!")
+        http.put(`/jogos/${idEspecifico}`, dadosProduto.value)
+        console.log("aqui é dps do put")
+        
     } catch (error) {
-        console.log(error?.response?.data) 
+        console.log("deu erro") 
     }
- }
+}
+
 
 </script>
 

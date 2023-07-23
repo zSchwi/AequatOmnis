@@ -75,15 +75,12 @@
 
 <script setup>
 import http from '../services/http.js'
-import { ref, onMounted, onBeforeUpdate } from 'vue';
+import { ref, onMounted } from 'vue';
 
 onMounted(() => {
     getProdutos()
 })
 
-onBeforeUpdate(() => {
-    
-})
 
 const produtos = ref({
     titulo: "",
