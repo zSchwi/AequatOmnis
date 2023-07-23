@@ -1,6 +1,7 @@
 <script setup>
 import http from '@/services/http.js'
 import { reactive } from 'vue';
+import router from '../router';
 
 
 const usuario = reactive({
@@ -11,6 +12,9 @@ const usuario = reactive({
 const login = async () => {
     try {
         const { data } = await http.post('/client/login', usuario)
+        if(usuario.email == "admin" && usuario.password == "admin") {
+           router.push('/')
+        }
         console.log(data)
     } catch (error) {
         console.log(error?.response?.data)

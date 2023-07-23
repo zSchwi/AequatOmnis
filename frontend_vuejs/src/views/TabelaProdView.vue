@@ -47,7 +47,11 @@
                 
 
                 <td class="text-center">
-                    <v-btn icon="mdi-update"></v-btn>
+
+                    <router-link :to="{ path: `/visualizarproduto/${produto._id}` }">
+                        <v-btn icon="mdi-update"></v-btn>
+                    </router-link>
+                    
                     <v-btn @click="deletarProduto(produto._id)" icon="mdi-delete"></v-btn>
 
                     <router-link :to="{path: `/editarproduto/${produto._id}`}">

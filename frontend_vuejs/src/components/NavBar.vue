@@ -15,8 +15,9 @@
             <v-btn color="primary" variant="text">TabelaProd</v-btn>
         </router-link>
 
-
-        <v-btn color="primary" variant="text">Cadastrar</v-btn>
+        <router-link to="/cadastrousuario">
+            <v-btn color="primary" variant="text">Cadastrar</v-btn>  
+        </router-link>
 
         <v-btn icon>
             <v-icon>mdi-account-circle</v-icon>

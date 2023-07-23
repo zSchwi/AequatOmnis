@@ -6,6 +6,8 @@ import TabelaVenda from '../views/TabelaVendasView.vue'
 import CadastrarProd from '../views/CadastrarProdutoView.vue'
 import FormularioVenda from '../views/FormularioVendaView.vue'
 import EditarProd from '../views/EditarProdutoView.vue'
+import VisualizarProd from '../views/VisualizarProdutoView.vue'
+import CadastrarCliente from '../views/CadastrarClienteView.vue'
 
 
 const router = createRouter({
@@ -21,6 +23,12 @@ const router = createRouter({
         path: '/login',
         name: 'loginscreen',
         component: LoginScreen
+    },
+
+    {
+        path: '/cadastrousuario',
+        name: 'cadastrarusuario',
+        component: CadastrarCliente
     },
 
     {
@@ -51,6 +59,12 @@ const router = createRouter({
         path: '/editarproduto/:id',
         name: 'editarproduto',
         component: EditarProd
+    },
+    
+    {
+        path: '/visualizarproduto/:id',
+        name: 'visualizarproduto',
+        component: VisualizarProd
     },
 
     ]
