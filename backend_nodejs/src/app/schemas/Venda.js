@@ -1,14 +1,9 @@
 import mongoose from '@/database';
-import Slugfy from '../../utils/Slugfy';
 
 const ProjectSchema = new mongoose.Schema({
     nome_produto: {
         type: String,
         required: true,
-        unique: true,
-    },
-    slug: {
-        type: String,
         unique: true,
     },
     comprador: {
@@ -28,7 +23,6 @@ const ProjectSchema = new mongoose.Schema({
 
 ProjectSchema.pre("save", function(next) {
     const title = this.title;
-    this.slug = Slugfy(title);
     next();
 })
 

@@ -1,8 +1,9 @@
 import express, { Router } from 'express';
 import bodyParser from 'body-parser';
-import { Jogos, Admin, Uploads, Client } from '@/app/controllers';
+import { Jogos, Admin, Venda, Uploads, Client } from '@/app/controllers';
 import User from './app/schemas/User';
 import swaggerUi from 'swagger-ui-express';
+
 
 const swaggerFile = require('./swagger.json');
 
@@ -14,9 +15,9 @@ const cors = require('cors')
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use('/jogos', Jogos);
 app.use('/admin', Admin);
+app.use('/venda', Venda);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use('/uploads', Uploads);
 app.use("/client", Client);
@@ -61,3 +62,5 @@ createAdminUser();
 
 console.log(`Servidor rodando no link https://localhost:${port}`);
 app.listen(port);
+
+module.exports = app

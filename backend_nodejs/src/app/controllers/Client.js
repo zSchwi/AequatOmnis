@@ -17,20 +17,20 @@ const generateToken = params => {
 
 router.post('/register', (req, res) => {
 
-    const { email, name, password } = req.body;
+    const { email, nome, password } = req.body;
 
     User.findOne({ email })
         .then(userData => {
             if (userData) {
                 return res.status(400).send({ error: "usuario ja existe" });
             } else {
-                User.create({ name, email, password, administrador })
+                User.create({ email, nome, password })
                     .then(user => {
                         //user.password = undefined;
                         res.json({
                             sucess: true,
                             message: "Usuário criado com sucesso",
-                            toke: resp.session_token
+                            toke: res.session_token
                         })
                         return res.send({ user });
 
@@ -49,7 +49,7 @@ router.post('/register', (req, res) => {
             }
         })
         .catch(error => {
-            console.error("Error ao consultar usuario no banco de dados", err);
+            console.error("Error ao consultar usuario no banco de dados", error);
             return res.status(500).send({ error: "Registro falhou" });
         });
 });

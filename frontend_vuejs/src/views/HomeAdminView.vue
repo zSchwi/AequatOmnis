@@ -3,13 +3,13 @@
 import Carrosel from '../components/CarroselJogos.vue'
 import Banner from '../components/BannerJogo.vue'
 import JogosEmpresa from '../components/RowDisplay.vue'
-import Navbar from '../components/Navbar.vue'
+import NavBarAdmin from '../components/NavBarAdmin.vue';
 
 </script>
 
 
 <template>
-    
+    <NavBarAdmin />
 
     <v-container>
         <Carrosel />

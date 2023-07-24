@@ -1,5 +1,4 @@
     import mongoose from '@/database';
-    import Slugfy from '../../utils/Slugfy';
 
     const ProjectSchema = new mongoose.Schema({
         titulo: {

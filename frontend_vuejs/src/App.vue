@@ -1,6 +1,6 @@
 <template>
   <v-app id="inspire" theme="dark">
-    <Navbar />
+    <NavBarAdmin />
     <v-main>
       <RouterView />
 
@@ -11,5 +11,6 @@
 <script setup>
 
 import Navbar from './components/NavBar.vue'
+import NavBarAdmin from './components/NavBarAdmin.vue'
 
 </script>

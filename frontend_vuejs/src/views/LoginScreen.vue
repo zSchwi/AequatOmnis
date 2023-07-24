@@ -1,19 +1,22 @@
 <script setup>
 import http from '@/services/http.js'
-import { reactive } from 'vue';
+import { ref } from 'vue';
 import router from '../router';
 
 
-const usuario = reactive({
+const usuario = ref({
     email: "",
     password: ""
 })
 
 const login = async () => {
     try {
-        const { data } = await http.post('/client/login', usuario)
+        console.log(usuario.value)
+        const { data } = await http.post('/client/login', usuario.value)
+            
         if(usuario.email == "admin" && usuario.password == "admin") {
-           router.push('/')
+            console.log("eu entrei como admin")
+           router.push('/admin')
         }
         console.log(data)
     } catch (error) {
