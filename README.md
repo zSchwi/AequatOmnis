@@ -71,6 +71,72 @@ O sistema preve e implementa funcionalidades para 3 possiveis usuários: Usuári
    ◉ Apache2
 ```
 
+## Regras de uso do git
+#### Regras de commit
+```
+   - Limite o assunto do commit a 50 caracteres.
+   - Utilizar verbos no imperativo (atualizado, alterado, adicionado, etc.).
+   - Procure ser direto e explicativo em seus commits.
+   - Realize pequenos commits, sempre mantendo a ultima versão mais estável para o commit atual.
+   - Não utilizar pontos finais.
+```
+
+#### Uso de branches
+```
+   - Caso haja alteração na documentação, alterar diretamente na main.
+   - Caso haja alteração no código, utilize uma branch separada.
+   - Não realizar merge da branch para a main sem que o código esteja funcional ou ser apenas um teste.
+```
+
+## Organização de pastas
+```
+   ├── Documentação
+   │   ├── Padrões adotados
+   │   │    ├── Padrões de codificação.pdf
+   │   │    └── Regras de Verificação e Analise de Requisitos.pdf
+   |   | 
+   │   ├── Requisitos
+   │   │    └── Documento de Requisitos.pdf
+   |   |
+   │   └── Diagramas
+   │        ├── Diagrama de casos de uso.pdf
+   |        ├── Diagrama de classes.pdf
+   |        ├── Diagrama de implantação.png
+   |        ├── Diagrama de sequencia.pdf
+   │        └── Diagrama de pacotes.png
+   │  
+   ├── BackEnd
+   │   ├── node_modules
+   │   ├── src
+   │   |    ├── app
+   │   |    ├── config
+   │   |    ├── database
+   │   |    ├── modules
+   │   |    ├── resources/mail/auth
+   │   |    ├── index.js
+   │   |    └── swagger.json
+   |   |
+   │   └── Upload/imgs
+   │        └── icon.png
+   |
+   ├── FrontEnd
+   │   ├── node_modules
+   │   ├── public
+   │   ├── src
+   │   |    ├── assets
+   │   |    ├── components
+   │   |    ├── router
+   │   |    ├── view
+   │   |    ├── App.vue
+   │   |    └── main.js
+   │   | 
+   │   ├── index.html
+   │   ├── package-lock.json
+   │   ├── package.json
+   │   └── vite.config.js
+
+```
+
 #
 Integrantes: [Lucas Gomes Colombo](https://github.com/LucasgColombo), [Guilherme Fabrício](https://github.com/GuiDev115), [Rafael Furtado](https://github.com/zSchwi)
 
